@@ -28,3 +28,7 @@ network:
   tunnels:
 {{ netplan_configuration['network']['tunnels']|to_nice_yaml|indent(4, true) }}
 {% endif %}
+{% if netplan_configuration['network']['vrfs'] is defined %}
+  vrfs:
+{{ netplan_configuration['network']['vrfs']|to_nice_yaml|indent(4, true) }}
+{% endif %}
