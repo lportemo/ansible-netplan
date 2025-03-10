@@ -32,3 +32,7 @@ network:
   vrfs:
 {{ netplan_configuration['network']['vrfs']|to_nice_yaml|indent(4, true) }}
 {% endif %}
+{% if netplan_configuration['network']['virtual-ethernets'] is defined %}
+  virtual-ethernets:
+{{ netplan_configuration['network']['virtual-ethernets']|to_nice_yaml|indent(4, true) }}
+{% endif %}
